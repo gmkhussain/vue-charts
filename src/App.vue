@@ -1,6 +1,10 @@
 <template>
   <router-link to="/">Home</router-link>
   <router-link to="/charts">Charts</router-link>
+  <hr />
+  <router-link to="/ch2">Ch 2</router-link>
+  <router-link to="/ch3">Ch 3</router-link>
+
   <router-view />
 </template>
 
@@ -9,7 +13,7 @@
 export default {
   name: 'App',
   components: {
-    
+
   }
 }
 </script>
