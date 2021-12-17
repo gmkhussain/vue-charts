@@ -30,6 +30,17 @@
 
         </div>
 
+
+
+
+
+
+        <div id="changeTextColor">
+            <span>Change Text Color</span>
+            <p></p>
+        </div>
+
+
     </div>
 </template>
 
@@ -111,7 +122,37 @@ export default {
 
 
 
-        console.log(p, p2, p3, p4 );
+
+
+
+
+
+
+
+            // Change Text Color
+
+            var data5 = [4, 1, 6, 2, 8, 9];
+            var p5 = d3.select("#changeTextColor")
+                        .selectAll("p")
+                        .data(data5)
+                        .enter().append("p")
+                        .style('color', function(d) {
+                            if (d % 2 === 0) {
+                                return "green";
+                            } else {
+                                return "red";
+                            }
+                        })
+                        .text(function(d) { return d + " "; });
+
+
+
+
+
+
+
+
+        console.log(p, p2, p3, p4, p5 );
 
 
     }
