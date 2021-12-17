@@ -17,6 +17,19 @@
             <p></p>
         </div>
 
+
+        <div id="dataBinding">
+            <span>Data Binding</span>
+            <p>N/A</p>
+            <p></p>
+        </div>
+
+
+        <div id="enters">
+            <span>enter()</span>
+
+        </div>
+
     </div>
 </template>
 
@@ -56,12 +69,51 @@ export default {
                 .data(myData2)
                 .text(function (d, i) {
                     console.log(i)
-                    return d;
+                    return `${i} - ${d}`;
                 });
 
 
 
-        console.log(p, p2)
+
+
+
+
+
+
+
+        var myData3 = [1,2,3,4];
+
+        var p3 = d3.select("#dataBinding")
+                .selectAll("p")
+                .data(myData3)
+                .text(function(d, i) {
+                    console.log(i)
+                    return d;
+                } );
+
+
+
+
+
+        
+        /*
+           The enter() method dynamically creates placeholder
+           references corresponding to the number of data values
+        */
+
+        var data4 = [4, 1, 6, 2, 8, 9];
+        var p4 = d3.select("#enters")
+                    .selectAll("p")
+                    .data(data4)
+                    .enter()
+                    .append("span")
+                    .text(function(d) { return d + " "; });
+
+
+
+        console.log(p, p2, p3, p4 );
+
+
     }
 }
 </script>
