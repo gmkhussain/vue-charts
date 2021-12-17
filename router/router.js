@@ -37,6 +37,11 @@ const routes = [
         path: '/ch6',
         name: "Ch6",
         component: () => import("@/views/frontend/pages/Charts/Ch6.vue")
+    },
+    {
+        path: '/ch7',
+        name: "Ch7",
+        component: () => import("@/views/frontend/pages/Charts/Ch7.vue")
     }
 
 ];
