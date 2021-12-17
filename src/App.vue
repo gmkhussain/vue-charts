@@ -15,5 +15,13 @@ export default {
 </script>
 
 <style>
-
+body {
+  background: #222;
+  color: #fff;
+}
+body a {
+    color: #fff;
+    display: inline-block;
+    margin: 0 4px;
+}
 </style>

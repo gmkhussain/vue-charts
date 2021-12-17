@@ -1,76 +1,46 @@
+<template>
+  <div class="hello">
+    Charts
+    <!-- <InlineChart :data="dataObj" /> -->
+    <!-- <LineChart :data="dataArray" /> -->
+    <Ch1 />
+  </div>
+</template>
+
 <script>
-import * as d3 from 'd3';
+// import LineChart from './Charts/LineChart.vue'
+// import InlineChart from './Charts/InlineChart.vue'
+
+import Ch1 from './Charts/Ch1.vue'
+
 export default {
-  name: 'LineChart',
+  name: 'HomePage',
+  components: {
+    // LineChart,
+    // InlineChart,
+    Ch1
+  },
   props: {
-    data: {
-      required: true,
-      type: Array,
-    },
-    width: {
-      default: 500,
-      type: Number,
-    },
-    height: {
-      default: 270,
-      type: Number,
-    }
+    msg: String
   },
   data() {
     return {
-      padding: 60,
-    };
-  },
-  computed: {
-    rangeX() {
-      const width = this.width - this.padding;
-      return [0, width];
-    },
-    rangeY() {
-      const height = this.height - this.padding;
-      return [0, height];
-    },
-    path() {
-      const x = d3.scaleLinear().range(this.rangeX);
-      const y = d3.scaleLinear().range(this.rangeY);
-      d3.axisLeft().scale(x);
-      d3.axisTop().scale(y);
-      x.domain(d3.extent(this.data, (d, i) => i));
-      y.domain([0, d3.max(this.data, d => d)]);
-      return d3.line()
-        .x((d, i) => x(i))
-        .y(d => y(d));
-    },
-    line() {
-      return this.path(this.data);
-    },
-    viewBox() {
-      return `0 0 ${this.width} ${this.height}`;
+      dataArray: [99, 71, 78, 25, 36, 92],
+      dataObj: [
+                { date: '2009-01-01', fruit: "Apples", sales: 130 },
+                { date: '2010-01-01', fruit: "Bananas", sales: 40 },
+                { date: '2011-01-01', fruit: "Apples", sales: 130 },
+                { date: '2012-01-01', fruit: "Bananas", sales: 40 },
+                { date: '2013-01-01', fruit: "Apples", sales: 130 },
+                { date: '2014-01-01', fruit: "Bananas", sales: 40 },
+                { date: '2015-01-01', fruit: "Apples", sales: 130 },
+                { date: '2015-08-01', fruit: "Bananas", sales: 40 }
+              ]
     }
-  },
-};
+  }
+}
 </script>
 
-<template>
-  <svg
-    class="line-chart"
-    :viewBox="viewBox"
-  >
-    <g transform="translate(0, 10)">
-      <path
-        class="line-chart__line"
-        :d="line"
-      />
-    </g>
-  </svg>
-</template>
+<style scoped>
 
-<style>
-.line-chart {margin: 25px}
-
-.line-chart__line {
-  fill: none;
-  stroke: #76BF8A;
-  stroke-width: 3px;
-}
 </style>
