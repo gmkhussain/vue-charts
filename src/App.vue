@@ -4,6 +4,7 @@
   <hr />
   <router-link to="/ch2">Ch 2</router-link>
   <router-link to="/ch3">Ch 3</router-link>
+  <router-link to="/ch4">Ch 4</router-link>
 
   <router-view />
 </template>
