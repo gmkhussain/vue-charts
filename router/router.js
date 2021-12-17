@@ -42,6 +42,11 @@ const routes = [
         path: '/ch7',
         name: "Ch7",
         component: () => import("@/views/frontend/pages/Charts/Ch7.vue")
+    },
+    {
+        path: '/chart-js',
+        name: "ChartWithExtScript",
+        component: () => import("@/views/frontend/pages/Charts/scripts/Script.vue")
     }
 
 ];
