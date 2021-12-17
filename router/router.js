@@ -32,7 +32,13 @@ const routes = [
         path: '/ch5',
         name: "Ch5",
         component: () => import("@/views/frontend/pages/Charts/Ch5.vue")
+    },
+    {
+        path: '/ch6',
+        name: "Ch6",
+        component: () => import("@/views/frontend/pages/Charts/Ch6.vue")
     }
+
 ];
 
 const router = createRouter({
