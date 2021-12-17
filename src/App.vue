@@ -8,6 +8,7 @@
   <router-link to="/ch5">Ch 5</router-link>
   <router-link to="/ch6">Ch 6</router-link>
   <router-link to="/ch7">Ch 7</router-link>
+  <router-link to="/ch8">Ch 8</router-link>
   <hr />
   
   <router-link to="/chart-js">Chart Ext JS</router-link>

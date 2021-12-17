@@ -12,8 +12,8 @@ import chart from "@/views/frontend/pages/Charts/scripts/chart.js";
 export default {
     name: "ChartWithExtScript",
     async mounted() {
-        let categoryBrands = await d3.csv("@/views/frontend/pages/Charts/scripts/category-brands.csv");
-        let data = d3.csvParse(categoryBrands);
+        let data = await d3.csv("@/views/frontend/pages/Charts/scripts/category-brands.csv");
+        // let data = d3.csvParse(categoryBrands);
         chart.play(this.$refs.container, data);
     }
 };
