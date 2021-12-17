@@ -7,6 +7,16 @@
             <span>Join Data to Existing Element</span>
             <p>N/A</p>
         </div>
+
+        <hr />
+
+        <div id="joinMultiData">
+            <span>joining data to multiple elements</span>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+
     </div>
 </template>
 
@@ -28,7 +38,30 @@ export default {
                 return d;
             });
 
-        console.log(p)
+      
+
+
+
+
+
+
+
+
+        // ****** Joining data to multiple elements ****** //
+
+        var myData2 = ["Hello World!", "Hello D3", "Hello JavaScript"];
+     
+        var p2 = d3.select("#joinMultiData")
+                .selectAll("p")
+                .data(myData2)
+                .text(function (d, i) {
+                    console.log(i)
+                    return d;
+                });
+
+
+
+        console.log(p, p2)
     }
 }
 </script>
